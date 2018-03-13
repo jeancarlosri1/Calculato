@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<center>
+		<h:form>
+			<ui:insert>
+
+				<h1>CALCULADORA</h1>
+
+			</ui:insert>
+			<h:messages errorStyle="color:#FF0000" />
+			<h:panelGrid columns="2">
+				<h:outputLabel value="numero1:" id="lblNumero1" for="numero1" />
+				<h:inputText value="#{loginMB.numero1}" maxlength="20" id="numero1"
+					label="numero" required="true" requiredMessage="Campo obligatorio"
+					size="20" />
+
+				<h:outputLabel value="numero2:" id="lblNumero2" for="numero2" />
+				<h:inputText value="#{loginMB.numero2}" maxlength="20" id="numero2"
+					label="numero2" required="true" requiredMessage="Campo obligatorio"
+					size="20" />
+
+			</h:panelGrid>
+			<br />
+			<h:panelGrid columns="4">
+				<h:commandButton value="+" id="boton1" action="#{loginMB.suma()}" />
+				<h:commandButton value="-" id="boton2" action="#{loginMB.resta()}" />
+				<h:commandButton value="*" id="boton3" action="#{loginMB.multiplicacion()}" />
+				<h:commandButton value="/" id="boton4" action="#{loginMB.division()}" />
+				<br />
+			</h:panelGrid>
+
+			<h:outputLabel value="Resultado:" id="lblResultado" for="resultado" />
+			<h:inputText value="#{loginMB.resultado}" id="resultado" size="20"
+				disabled="true" />
+
+		</h:form>
+	</center>
+</body>
+</html>
